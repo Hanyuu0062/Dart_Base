@@ -2,14 +2,14 @@ class Spacecraft {
   String name;
   DateTime? launchDate; //?表示可以为空的值
 
-  int? get launchYear => launchDate?.year;
+  int? get launchYear => launchDate?.year;//这是一个函数,类似get方法
 
-  Spacecraft(this.name, this.launchDate) {}
+  Spacecraft(this.name, this.launchDate) {}//优化的构造函数
 
-  Spacecraft.unlaunched(String name) : this(name, null);
+  Spacecraft.unlaunched(String name) : this(name, null);//有名字的构造函数，重载的
 
   void describe() {
-    print('Spacecraft $name');
+    print('Spacecraft $name');//
     var launchDate = this.launchDate;
     if (launchDate != null) {
       int years = DateTime.now().difference(launchDate).inDays ~/ 365;
